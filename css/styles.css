@@ -32,6 +32,8 @@ p {
 }
 img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 .list {
   list-style: none;
@@ -44,20 +46,43 @@ img {
 }
 /********************************************************** components ****************************************************/
 
+/******************************** CONTAINER******************* */
+.container {
+  /*************** BASIC STYLES***************** */
+  min-width: 320px;
+  max-width: 396px;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin: 0 auto;
+}
+/* TABLET SCREEN    */
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 734px;
+  }
+}
+
+/* Desctop */
+@media only screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/* **************************** */
+
 .card-set-menu {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--indent);
-}
-.card-set-item {
-  flex-basis: calc((100%- var(--indent) * var(--item)-1) / (var(--item)));
+  justify-content: center;
+  gap: 24px;
 }
 
-.container {
-  width: 1158px;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin: 0 auto;
+.card-set-item {
+  flex-basis: calc((100%- var(--indent) * var(--item)-1) / (var(--item)));
 }
 
 .subtitle-second {
@@ -70,14 +95,17 @@ img {
   color: var(--logo-color-part-two-top);
   margin-bottom: 72px;
 }
+
 .subtitle-three {
+  font-family: "Roboto";
+  font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
-  color: var(--logo-color-part-two-top);
-  margin-bottom: 8px;
+  color: var(--background-color-hero-section);
 }
+
 .description {
   font-weight: 400;
   font-size: 16px;
@@ -257,19 +285,53 @@ img {
   background-color: var(--accent-color);
 }
 /****************************************************section two***********************************************/
-.company-characteristics {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
 .menu-characteristics {
   display: flex;
-  gap: var(--indent);
+  flex-wrap: wrap;
+  gap: 72px 24px;
 }
 .menu-item-characteristics {
-  width: 264px;
+  width: 396px;
+}
+@media only screen and (min-width: 768px) {
+  .menu-item-characteristics {
+    width: 356px;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .menu-item-characteristics {
+    width: 264px;
+  }
 }
 .characteristic-pictures {
   margin-bottom: 8px;
+  display: none;
+}
+@media only screen and (min-width: 1158px) {
+  .characteristic-pictures {
+    display: block;
+  }
+}
+.subtitle-three-section-two {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  color: var(--logo-color-part-two-top);
+}
+@media only screen and (min-width: 768px) {
+  .subtitle-three-section-two {
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 1158px) {
+  .subtitle-three-section-two {
+    font-weight: 500;
+    font-size: 20px;
+  }
 }
 .pictures {
   display: flex;
@@ -282,23 +344,40 @@ img {
   margin-bottom: 8px;
 }
 /**************************** section thre*************************************************************/
-.what-we-are-doing {
-  padding-bottom: 120px;
-}
+
 .menu-what-we-are-doing {
   display: flex;
   align-items: center;
   gap: 24px;
 }
-/* ***********************************************section four *********************************************************/
-.our-team {
-  background-color: var(--logo-color-part-two-down);
-  padding-top: 120px;
-  padding-bottom: 120px;
+@media only screen and (max-width: 1157px) {
+  .what-we-are-doing {
+    display: none;
+  }
 }
+
+/* ***********************************************section four *********************************************************/
+.section {
+  background-color: var(--logo-color-part-two-down);
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+@media only screen and (min-width: 1120px) {
+  .our-team {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
 .our-team-menu {
-  display: flex;
   align-items: center;
+  gap: 72px;
+  column-gap: 24px;
+}
+@media only screen and (min-width: 768px) {
+  .our-team-menu {
+    row-gap: 64px;
+  }
 }
 .our-team-menu-item {
   width: 264px;
@@ -361,18 +440,30 @@ img {
 }
 .customers-menu {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap: 24px;
-
+  row-gap: 72px;
+  column-gap: 16px;
   border-radius: 80%;
   margin: auto;
+}
+@media only screen and (min-width: 768px) {
+  .customers-menu {
+    column-gap: 24px;
+  }
+}
+.customers-menu-item {
+  width: 190px;
+}
+@media only screen and (min-width: 768px) {
+  .customers-menu-item {
+    width: 168px;
+  }
 }
 .customers-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 168px;
   height: 88px;
   border: 1px solid #8e8f99;
   border-radius: 4px;
